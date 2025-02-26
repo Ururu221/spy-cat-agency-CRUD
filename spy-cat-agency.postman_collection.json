@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "0c9415b7-f33b-438d-9c53-7571beee08c5",
+		"name": "project1-for-interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39370336"
+	},
+	"item": [
+		{
+			"name": "cat_controller",
+			"item": [
+				{
+					"name": "get all cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/cats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new cat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"testing\",\r\n    \"years_of_experience\": 4,\r\n    \"salary\": 207522,\r\n    \"breed\": \"American Shorthair\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/cats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update salary",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/cats/2?salary=25000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"cats",
+								"2"
+							],
+							"query": [
+								{
+									"key": "salary",
+									"value": "25000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get 1 cat by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/cats/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"cats",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete cat by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/cats/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"cats",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mission_controller",
+			"item": [
+				{
+					"name": "create mission and targets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"targets\": [\r\n        {\r\n            \"name\": \"just an ordinary human\",\r\n            \"country\": \"Poland\"\r\n        },\r\n        {\r\n           \"name\": \"wealthy cat\",\r\n            \"country\": \"Germany\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1323/missions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all missions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/missions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"missions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete mission by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/missions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"missions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign cat to mission",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/missions/assign-cat?cat_id=1&mission_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"missions",
+								"assign-cat"
+							],
+							"query": [
+								{
+									"key": "cat_id",
+									"value": "1"
+								},
+								{
+									"key": "mission_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mark mission as completed",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/missions/complete/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"missions",
+								"complete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get mission by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/missions/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"missions",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "target_controller",
+			"item": [
+				{
+					"name": "add some notes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/targets/update-note/10?notes=wealthy cat is NOT wealthy anymore(",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"targets",
+								"update-note",
+								"10"
+							],
+							"query": [
+								{
+									"key": "notes",
+									"value": "wealthy cat is NOT wealthy anymore("
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mark target as completed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/targets/complete/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"targets",
+								"complete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete target from mission",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1323/targets/delete-from-mission/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1323",
+							"path": [
+								"targets",
+								"delete-from-mission",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add target to mission",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "\"/\" hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1323/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

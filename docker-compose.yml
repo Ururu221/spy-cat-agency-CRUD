@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=2413050505  
+      - POSTGRES_DB=Spy_Cat_Agency    
+      - POSTGRES_USER=postgres       
+    ports:
+      - "1234:5432"
